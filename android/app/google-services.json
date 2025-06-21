@@ -1,0 +1,87 @@
+{
+  "project_info": {
+    "project_number": "731907311303",
+    "firebase_url": "https://academe-35669-default-rtdb.firebaseio.com",
+    "project_id": "academe-35669",
+    "storage_bucket": "academe-35669.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:731907311303:android:6817d1c63b24c99f5ba0e2",
+        "android_client_info": {
+          "package_name": "com.attendly.attendance_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJ7AuicCRc1oPB6xfLkhSOIUroqleBicA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:731907311303:android:df26dd66d18dbd375ba0e2",
+        "android_client_info": {
+          "package_name": "com.example.academe_admin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJ7AuicCRc1oPB6xfLkhSOIUroqleBicA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:731907311303:android:ceab18fc8b2228945ba0e2",
+        "android_client_info": {
+          "package_name": "com.example.academe_mobile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJ7AuicCRc1oPB6xfLkhSOIUroqleBicA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:731907311303:android:a6418c287d98ad1d5ba0e2",
+        "android_client_info": {
+          "package_name": "com.example.academe_mobile_new"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJ7AuicCRc1oPB6xfLkhSOIUroqleBicA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

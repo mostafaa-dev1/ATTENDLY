@@ -1,0 +1,4 @@
+class Keys {
+  static String supabaseKey =
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ0eW9pYWp1d2VlZmJja295eG9kIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjExMjg1MzcsImV4cCI6MjAzNjcwNDUzN30.rOxRLt0SgARShs_IdhUoJ06EGHoLVLQ1qYNfa4_GUP4';
+}

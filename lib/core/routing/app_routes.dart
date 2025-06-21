@@ -1,0 +1,47 @@
+class AppRoutes {
+  static const String onBoard = '/onboard';
+  static const String login = '/login';
+  static const String register = '/register';
+  static const String home = '/home';
+  static const String quizzes = '/quizzes';
+  static const String profile = '/profile';
+  static const String sheets = '/sheets';
+  static const String files = '/files';
+  static const String leaderboard = '/leaderboard';
+  static const String ai = '/ai';
+  static const String aiChat = '/aichat';
+  static const String translatePDF = '/translatePDF';
+  static const String attendance = '/attendance';
+  static const String cashedAttendance = '/cashedAttendance';
+  static const String studentInfo = '/studentInfo';
+  static const String quizQuestions = '/quizQuestions';
+  static const String qr = '/qr';
+  static const String qrScanner = '/qrScanner';
+  static const String community = '/community';
+  static const String postView = '/postView';
+  static const String addTextPost = '/addTextPost';
+  static const String addPostList = '/addPostList';
+  static const String addPost = '/addPostList';
+
+  static const String imageView = '/imageview';
+  static const String verify = '/verify';
+  static const String gender = '/gender';
+  static const String settings = '/settings';
+  static const String otp = '/otp';
+  static const String editNameId = '/editNameID';
+  static const String privacypolicy = '/privacypolicy';
+  static const String confirmAccount = '/confirmAccount';
+  static const String changePassword = '/changePassword';
+  static const String changeEmail = '/changeEmail';
+  static const String postListsContent = '/postListsContent';
+  static const String lecturerLogin = '/lecturerLogin';
+  static const String search = '/search';
+  static const String scanningSettings = '/scanningSettings';
+  static const String subjectSettings = '/subjectSettings';
+  static const String studentAttendance = '/studentAttendance';
+  static const String admin = '/admin';
+  static const String bio = '/bio';
+  static const String about = '/about';
+  static const String leagueStanding = '/leagueStanding';
+  static const String addSubject = '/addSubject';
+}
