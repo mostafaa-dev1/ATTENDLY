@@ -2,7 +2,6 @@
 
 import 'package:academe_mobile_new/core/helpers/spacing.dart';
 import 'package:academe_mobile_new/core/themes/colors.dart';
-import 'package:academe_mobile_new/core/themes/text_styles.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -91,8 +90,7 @@ class CustomTextFrom extends StatelessWidget {
               suffixIcon: suffixIcon,
               hintText: hintText,
               prefixStyle: Theme.of(context).textTheme.headlineMedium,
-              hintStyle: AppTextStyles.style13w400g700
-                  .copyWith(color: Colors.grey[400]),
+              hintStyle: Theme.of(context).textTheme.labelLarge,
             ),
           ),
         ),

@@ -2,7 +2,7 @@ import 'package:academe_mobile_new/core/helpers/extentions.dart';
 import 'package:academe_mobile_new/core/helpers/spacing.dart';
 import 'package:academe_mobile_new/core/networking/local_database/shared_preferances.dart';
 import 'package:academe_mobile_new/core/routing/app_routes.dart';
-import 'package:academe_mobile_new/core/themes/text_styles.dart';
+import 'package:academe_mobile_new/core/themes/colors.dart';
 import 'package:academe_mobile_new/core/widgets/custom_button.dart';
 import 'package:academe_mobile_new/core/widgets/have_not_have_account.dart';
 import 'package:academe_mobile_new/core/widgets/sacffold_messinger.dart';
@@ -47,7 +47,8 @@ class Login extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text('Hello, Welcome Back 👋',
-                        style: AppTextStyles.style20Bc),
+                        style: theme.textTheme.titleLarge!
+                            .copyWith(color: AppColors.mainColor)),
                     Text('Happy to see you again, please login here',
                         style: theme.textTheme.headlineSmall),
                     verticalSpace(20),
@@ -73,9 +74,9 @@ class Login extends StatelessWidget {
                                 isError: true,
                               );
                             } else {
-                              if (cubit.formKey.currentState!.validate()) {
-                                cubit.isThisdeviceSignedIn();
-                              }
+                              // if (cubit.formKey.currentState!.validate()) {
+                              //   cubit.isThisdeviceSignedIn();
+                              // }
                             }
                             //cubit.isThisdeviceSignedIn();
                           },

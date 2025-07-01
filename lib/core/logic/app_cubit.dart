@@ -1,11 +1,9 @@
 import 'dart:async';
 import 'dart:convert';
-import 'dart:io';
 import 'dart:math';
 
 import 'package:academe_mobile_new/core/Constants/data.dart';
 import 'package:academe_mobile_new/core/helpers/connectivity.dart';
-import 'package:academe_mobile_new/core/helpers/excel_funcs.dart';
 import 'package:academe_mobile_new/core/helpers/shared_functions.dart';
 import 'package:academe_mobile_new/core/models/student_model.dart';
 import 'package:academe_mobile_new/core/networking/local_database/shared_preferances.dart';
@@ -21,12 +19,10 @@ import 'package:academe_mobile_new/features/home/data/model/card_model.dart';
 import 'package:academe_mobile_new/features/home/data/model/subject_card_model.dart';
 import 'package:academe_mobile_new/features/profile/data/profile_data.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:ntp/ntp.dart';
-import 'package:permission_handler/permission_handler.dart';
 
 part 'app_state.dart';
 

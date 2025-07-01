@@ -4,6 +4,7 @@ import 'package:academe_mobile_new/core/networking/local_database/shared_prefera
 import 'package:academe_mobile_new/core/notifications/local_notifications.dart';
 import 'package:academe_mobile_new/core/routing/router.dart';
 import 'package:academe_mobile_new/firebase_options.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -19,8 +20,12 @@ Future<void> main() async {
 
   Bloc.observer = MyBlocObserver();
   await CashHelper.init();
-  NotificationsHelper().getAccessToken();
-  runApp(AcademeApp(
-    appRouter: AppRouter(),
+  await EasyLocalization.ensureInitialized();
+
+  runApp(EasyLocalization(
+    supportedLocales: [Locale('en'), Locale('ar')],
+    path: 'assets/translations', // <-- change the path of the translation files
+    fallbackLocale: Locale('en'),
+    child: AcademeApp(appRouter: AppRouter()),
   ));
 }

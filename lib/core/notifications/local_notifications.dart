@@ -52,8 +52,6 @@ class LocalNotifications {
       tz.TZDateTime(tz.local, dateTime.year, dateTime.month, dateTime.day,
           dateTime.hour, dateTime.minute),
       androidNotificationDetails,
-      uiLocalNotificationDateInterpretation:
-          UILocalNotificationDateInterpretation.absoluteTime,
       androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
     );
 

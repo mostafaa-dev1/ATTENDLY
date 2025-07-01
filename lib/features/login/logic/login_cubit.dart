@@ -13,21 +13,22 @@ part 'login_state.dart';
 class LoginCubit extends Cubit<LoginState> {
   LoginCubit() : super(LoginInitial());
 
-  TextEditingController idController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
   var formKey = GlobalKey<FormState>();
 
-  Future<void> login(
-      String id, bool isUpdateToken, Map<String, dynamic> data) async {
-    emit(LoginLoading());
-    await getData(idController.text).then((v) async {
-      if (isUpdateToken) {
-        await updateToken(idController.text);
-      }
-      CashHelper.putString(key: 'id', value: idController.text);
-      await subscribe();
-      emit(LoginSuccess());
-    });
-  }
+  // Future<void> login(
+  //     String id, bool isUpdateToken, Map<String, dynamic> data) async {
+  //   emit(LoginLoading());
+  //   await getData(idController.text).then((v) async {
+  //     if (isUpdateToken) {
+  //       await updateToken(idController.text);
+  //     }
+  //     CashHelper.putString(key: 'id', value: idController.text);
+  //     await subscribe();
+  //     emit(LoginSuccess());
+  //   });
+  // }
 
   Future<void> subscribe() async {
     await subscribeToTopic('all');
@@ -103,31 +104,31 @@ class LoginCubit extends Cubit<LoginState> {
     });
   }
 
-  void isThisdeviceSignedIn() async {
-    emit(SignedInLoading());
-    String? token = await NotificationsHelper().getToken();
+  // void isThisdeviceSignedIn() async {
+  //   emit(SignedInLoading());
+  //   String? token = await NotificationsHelper().getToken();
 
-    await FirebaseServices.readDataById('AppUsers', idController.text)
-        .then((value) async {
-      if (value.exists) {
-        if (value['isBlocked'] == true) {
-          emit(LoginErorr(error: 'Your account is blocked'));
-        } else {
-          if (value['token'] != token) {
-            login(idController.text, true, value.data()!);
-          } else {
-            login(idController.text, false, value.data()!);
-          }
-        }
-      } else {
-        emit(LoginErorr(error: 'User not found, please try again'));
-      }
-    }).catchError((onError) {
-      emit(GetDataErorrState(
-        error: 'Your ID or Username is not correct, please try again',
-      ));
-    });
-  }
+  //   await FirebaseServices.readDataById('AppUsers', idController.text)
+  //       .then((value) async {
+  //     if (value.exists) {
+  //       if (value['isBlocked'] == true) {
+  //         emit(LoginErorr(error: 'Your account is blocked'));
+  //       } else {
+  //         if (value['token'] != token) {
+  //           login(idController.text, true, value.data()!);
+  //         } else {
+  //           login(idController.text, false, value.data()!);
+  //         }
+  //       }
+  //     } else {
+  //       emit(LoginErorr(error: 'User not found, please try again'));
+  //     }
+  //   }).catchError((onError) {
+  //     emit(GetDataErorrState(
+  //       error: 'Your ID or Username is not correct, please try again',
+  //     ));
+  //   });
+  // }
 
   String diffrence(DateTime date) {
     Duration duration =

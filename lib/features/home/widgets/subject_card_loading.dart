@@ -2,7 +2,6 @@ import 'package:academe_mobile_new/core/helpers/extentions.dart';
 import 'package:academe_mobile_new/core/helpers/spacing.dart';
 import 'package:academe_mobile_new/core/routing/app_routes.dart';
 import 'package:academe_mobile_new/core/themes/colors.dart';
-import 'package:academe_mobile_new/core/themes/text_styles.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -136,9 +135,10 @@ Widget loding(BuildContext context) => Padding(
                       children: [
                         Text(
                           'QR Code',
-                          style: AppTextStyles.style13w400g700.copyWith(
-                            color: AppColors.mainColor,
-                          ),
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodySmall!
+                              .copyWith(color: AppColors.mainColor),
                         ),
                         horizontalSpace(5),
                         Icon(Icons.qr_code_2_rounded,
@@ -154,9 +154,10 @@ Widget loding(BuildContext context) => Padding(
                       children: [
                         Text(
                           'View more',
-                          style: AppTextStyles.style13w400g700.copyWith(
-                            color: AppColors.mainColor,
-                          ),
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodySmall!
+                              .copyWith(color: AppColors.mainColor),
                         ),
                         horizontalSpace(5),
                         Icon(IconBroken.Arrow___Right_2,

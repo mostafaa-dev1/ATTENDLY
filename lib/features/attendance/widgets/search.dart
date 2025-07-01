@@ -4,7 +4,6 @@ import 'package:academe_mobile_new/core/helpers/spacing.dart';
 import 'package:academe_mobile_new/core/logic/app_cubit.dart';
 import 'package:academe_mobile_new/core/routing/app_routes.dart';
 import 'package:academe_mobile_new/core/themes/colors.dart';
-import 'package:academe_mobile_new/core/themes/text_styles.dart';
 import 'package:academe_mobile_new/core/widgets/app_text_form.dart';
 import 'package:academe_mobile_new/features/attendance/model/student_model.dart';
 import 'package:academe_mobile_new/features/attendance/widgets/item_loading.dart';
@@ -123,7 +122,7 @@ class _SearchState extends State<Search> {
                   model.name!,
                   style: theme.textTheme.headlineMedium),
               subtitle: Text(model.id.toString(),
-                  style: AppTextStyles.style13w400g700.copyWith(
+                  style: theme.textTheme.headlineSmall!.copyWith(
                       fontWeight: FontWeight.w600, color: Colors.grey[500])),
               trailing: Container(
                   padding:
@@ -133,7 +132,7 @@ class _SearchState extends State<Search> {
                     borderRadius: BorderRadius.all(Radius.circular(50)),
                   ),
                   child: Text(model.attendance.toString(),
-                      style: AppTextStyles.style13Bb
+                      style: theme.textTheme.headlineSmall!
                           .copyWith(color: Colors.white))),
             )),
       ),

@@ -6,14 +6,11 @@ import 'package:academe_mobile_new/core/themes/colors.dart';
 import 'package:academe_mobile_new/core/widgets/alert.dart';
 import 'package:academe_mobile_new/core/widgets/custom_button.dart';
 import 'package:academe_mobile_new/features/home/data/model/subject_card_model.dart';
-import 'package:custom_qr_generator/custom_qr_generator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icon_broken/icon_broken.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:qr_code_scanner_plus/qr_code_scanner_plus.dart';
-import 'package:rflutter_alert/rflutter_alert.dart';
 
 class QRScanner extends StatefulWidget {
   const QRScanner({super.key, required this.model, required this.isOnline});
@@ -236,7 +233,7 @@ class _QRScannerState extends State<QRScanner> {
                                 cubit.student!.id,
                                 cubit.student!.gender,
                               );
-                          showQR(context);
+                          //showQR(context);
                           // qrController!.pauseCamera();
                         },
                         width: width / 2.5,
@@ -276,77 +273,77 @@ class _QRScannerState extends State<QRScanner> {
     );
   }
 
-  void showQR(BuildContext context) {
-    Alert(
-      context: context,
-      alertAnimation: (context, animation, secondaryAnimation, child) {
-        return FadeTransition(
-          opacity: animation,
-          child: child,
-        );
-      },
-      style: AlertStyle(
-        isOverlayTapDismiss: false,
-        backgroundColor: Theme.of(context).cardColor,
-        isCloseButton: false,
-      ),
-      buttons: [
-        DialogButton(
-          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 35),
-          splashColor: Colors.transparent,
-          color: Theme.of(context).cardColor,
-          border: Border.all(
-            color: AppColors.mainColor,
-          ),
-          onPressed: () {
-            context.pop();
-            // qrController!.resumeCamera();
-          },
-          child: Text(
-            'Close',
-            style: Theme.of(context)
-                .textTheme
-                .headlineMedium!
-                .copyWith(color: AppColors.mainColor),
-          ),
-        ),
-      ],
-      content: Center(
-        child: CustomPaint(
-          willChange: true,
-          painter: QrPainter(
-              data: context.read<AppCubit>().code,
-              options: QrOptions(
-                  shapes: const QrShapes(
-                    darkPixel: QrPixelShapeRoundCorners(
-                      cornerFraction: .5,
-                    ),
-                    frame: QrFrameShapeRoundCorners(cornerFraction: .25),
-                    ball: QrBallShapeRoundCorners(cornerFraction: .25),
-                  ),
-                  colors: QrColors(
-                    background: QrColor.solid(
-                      Theme.of(context).colorScheme.primary,
-                    ),
-                    ball: QrColor.solid(
-                      Theme.of(context).canvasColor,
-                    ),
-                    frame: QrColor.solid(
-                      Theme.of(context).canvasColor,
-                    ),
-                    dark: QrColor.solid(
-                      Theme.of(context).canvasColor,
-                    ),
-                  ))),
-          size: Size(MediaQuery.of(context).size.width / 1.5.w,
-              MediaQuery.of(context).size.height / 3.2.h),
-        ),
-      ),
-      // verticalSpace(10),
-      // Text(
-      //   context.read<AppCubit>().student!.id,
-      //   style: Theme.of(context).textTheme.headlineMedium,
-      // ),
-    ).show();
-  }
+  // void showQR(BuildContext context) {
+  //   Alert(
+  //     context: context,
+  //     alertAnimation: (context, animation, secondaryAnimation, child) {
+  //       return FadeTransition(
+  //         opacity: animation,
+  //         child: child,
+  //       );
+  //     },
+  //     style: AlertStyle(
+  //       isOverlayTapDismiss: false,
+  //       backgroundColor: Theme.of(context).cardColor,
+  //       isCloseButton: false,
+  //     ),
+  //     buttons: [
+  //       DialogButton(
+  //         padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 35),
+  //         splashColor: Colors.transparent,
+  //         color: Theme.of(context).cardColor,
+  //         border: Border.all(
+  //           color: AppColors.mainColor,
+  //         ),
+  //         onPressed: () {
+  //           context.pop();
+  //           // qrController!.resumeCamera();
+  //         },
+  //         child: Text(
+  //           'Close',
+  //           style: Theme.of(context)
+  //               .textTheme
+  //               .headlineMedium!
+  //               .copyWith(color: AppColors.mainColor),
+  //         ),
+  //       ),
+  //     ],
+  //     content: Center(
+  //       child: CustomPaint(
+  //         willChange: true,
+  //         painter: QrPainter(
+  //             data: context.read<AppCubit>().code,
+  //             options: QrOptions(
+  //                 shapes: const QrShapes(
+  //                   darkPixel: QrPixelShapeRoundCorners(
+  //                     cornerFraction: .5,
+  //                   ),
+  //                   frame: QrFrameShapeRoundCorners(cornerFraction: .25),
+  //                   ball: QrBallShapeRoundCorners(cornerFraction: .25),
+  //                 ),
+  //                 colors: QrColors(
+  //                   background: QrColor.solid(
+  //                     Theme.of(context).colorScheme.primary,
+  //                   ),
+  //                   ball: QrColor.solid(
+  //                     Theme.of(context).canvasColor,
+  //                   ),
+  //                   frame: QrColor.solid(
+  //                     Theme.of(context).canvasColor,
+  //                   ),
+  //                   dark: QrColor.solid(
+  //                     Theme.of(context).canvasColor,
+  //                   ),
+  //                 ))),
+  //         size: Size(MediaQuery.of(context).size.width / 1.5.w,
+  //             MediaQuery.of(context).size.height / 3.2.h),
+  //       ),
+  //     ),
+  //     // verticalSpace(10),
+  //     // Text(
+  //     //   context.read<AppCubit>().student!.id,
+  //     //   style: Theme.of(context).textTheme.headlineMedium,
+  //     // ),
+  //   ).show();
+  //}
 }

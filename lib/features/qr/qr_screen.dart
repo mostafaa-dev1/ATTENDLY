@@ -1,18 +1,8 @@
 import 'dart:async';
 
-import 'package:academe_mobile_new/core/helpers/spacing.dart';
 import 'package:academe_mobile_new/core/logic/app_cubit.dart';
-import 'package:custom_qr_generator/colors/color.dart';
-import 'package:custom_qr_generator/options/colors.dart';
-import 'package:custom_qr_generator/options/options.dart';
-import 'package:custom_qr_generator/options/shapes.dart';
-import 'package:custom_qr_generator/qr_painter.dart';
-import 'package:custom_qr_generator/shapes/ball_shape.dart';
-import 'package:custom_qr_generator/shapes/frame_shape.dart';
-import 'package:custom_qr_generator/shapes/pixel_shape.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_windowmanager_plus/flutter_windowmanager_plus.dart';
 
 class QrScreen extends StatefulWidget {
@@ -75,63 +65,63 @@ class _QrScreenState extends State<QrScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                height: height / 2.5.h,
-                width: width / 1.5.w,
-                padding: const EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(50),
-                    color: Theme.of(context).colorScheme.primary,
-                    boxShadow: [
-                      BoxShadow(
-                          color: Theme.of(context).colorScheme.shadow,
-                          blurRadius: 7,
-                          spreadRadius: 2,
-                          offset: const Offset(0, 3))
-                    ]),
-                child: Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      CustomPaint(
-                        painter: QrPainter(
-                            data: context.read<AppCubit>().code,
-                            options: QrOptions(
-                                shapes: const QrShapes(
-                                  darkPixel: QrPixelShapeRoundCorners(
-                                    cornerFraction: .5,
-                                  ),
-                                  frame: QrFrameShapeRoundCorners(
-                                      cornerFraction: .25),
-                                  ball: QrBallShapeRoundCorners(
-                                      cornerFraction: .25),
-                                ),
-                                colors: QrColors(
-                                  background: QrColor.solid(
-                                    Theme.of(context).colorScheme.primary,
-                                  ),
-                                  ball: QrColor.solid(
-                                    Theme.of(context).canvasColor,
-                                  ),
-                                  frame: QrColor.solid(
-                                    Theme.of(context).canvasColor,
-                                  ),
-                                  dark: QrColor.solid(
-                                    Theme.of(context).canvasColor,
-                                  ),
-                                ))),
-                        size: Size(width / 1.5.w, height / 3.2.h),
-                      ),
-                      verticalSpace(10),
-                      Text(
-                        context.read<AppCubit>().student!.id,
-                        style: Theme.of(context).textTheme.headlineMedium,
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+              // Container(
+              //   height: height / 2.5.h,
+              //   width: width / 1.5.w,
+              //   padding: const EdgeInsets.all(10),
+              //   decoration: BoxDecoration(
+              //       borderRadius: BorderRadius.circular(50),
+              //       color: Theme.of(context).colorScheme.primary,
+              //       boxShadow: [
+              //         BoxShadow(
+              //             color: Theme.of(context).colorScheme.shadow,
+              //             blurRadius: 7,
+              //             spreadRadius: 2,
+              //             offset: const Offset(0, 3))
+              //       ]),
+              //   child: Center(
+              //     child: Column(
+              //       mainAxisAlignment: MainAxisAlignment.center,
+              //       crossAxisAlignment: CrossAxisAlignment.center,
+              //       children: [
+              //         CustomPaint(
+              //           painter: QrPainter(
+              //               data: context.read<AppCubit>().code,
+              //               options: QrOptions(
+              //                   shapes: const QrShapes(
+              //                     darkPixel: QrPixelShapeRoundCorners(
+              //                       cornerFraction: .5,
+              //                     ),
+              //                     frame: QrFrameShapeRoundCorners(
+              //                         cornerFraction: .25),
+              //                     ball: QrBallShapeRoundCorners(
+              //                         cornerFraction: .25),
+              //                   ),
+              //                   colors: QrColors(
+              //                     background: QrColor.solid(
+              //                       Theme.of(context).colorScheme.primary,
+              //                     ),
+              //                     ball: QrColor.solid(
+              //                       Theme.of(context).canvasColor,
+              //                     ),
+              //                     frame: QrColor.solid(
+              //                       Theme.of(context).canvasColor,
+              //                     ),
+              //                     dark: QrColor.solid(
+              //                       Theme.of(context).canvasColor,
+              //                     ),
+              //                   ))),
+              //           size: Size(width / 1.5.w, height / 3.2.h),
+              //         ),
+              //         verticalSpace(10),
+              //         Text(
+              //           context.read<AppCubit>().student!.id,
+              //           style: Theme.of(context).textTheme.headlineMedium,
+              //         ),
+              //       ],
+              //     ),
+              //   ),
+              // ),
             ],
           ),
         ),

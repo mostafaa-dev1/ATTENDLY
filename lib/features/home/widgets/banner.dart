@@ -23,15 +23,17 @@ class HomeBanner extends StatelessWidget {
       width: double.infinity,
       height: 200,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(25),
-          gradient: const LinearGradient(
-            colors: [
-              AppColors.mainColor,
-              Color.fromARGB(255, 0, 70, 200),
-            ],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          )),
+        borderRadius: BorderRadius.circular(25),
+        color: AppColors.mainColor,
+        // gradient: const LinearGradient(
+        //   colors: [
+        //     AppColors.mainColor,
+        //     Color.fromARGB(255, 0, 70, 200),
+        //   ],
+        //   begin: Alignment.topLeft,
+        //   end: Alignment.bottomRight,
+        // )
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

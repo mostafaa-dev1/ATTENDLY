@@ -1,10 +1,8 @@
 import 'package:academe_mobile_new/core/helpers/extentions.dart';
-import 'package:academe_mobile_new/core/logic/app_cubit.dart';
 import 'package:academe_mobile_new/core/routing/app_routes.dart';
 import 'package:academe_mobile_new/features/attendance/widgets/attendance_items.dart';
 import 'package:academe_mobile_new/features/home/data/model/subject_card_model.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icon_broken/icon_broken.dart';
 
 class AttendanceScreen extends StatelessWidget {

@@ -1,10 +1,6 @@
-import 'package:academe_mobile_new/core/helpers/spacing.dart';
 import 'package:academe_mobile_new/core/themes/colors.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../themes/text_styles.dart';
 
 class CustomButton extends StatelessWidget {
   final String buttonName;
@@ -66,49 +62,22 @@ class CustomButton extends StatelessWidget {
               : backgroundColor ?? AppColors.mainColor)),
       onPressed: onPressed,
       child: isLoading ?? false
-          ? SizedBox(
-              width: width,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text('Please wait',
-                      style: AppTextStyles.style16Bw.copyWith(fontSize: 15)),
-                  horizontalSpace(15),
-                  const CupertinoActivityIndicator(
-                    color: Colors.white,
-                  )
-                ],
+          ? Center(
+              child: SizedBox(
+                height: 20.h,
+                width: 20.w,
+                child: const CircularProgressIndicator(
+                  color: Colors.white,
+                  strokeWidth: 2,
+                ),
               ),
             )
-          : Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                icon != null && reightIcon == false
-                    ? Icon(
-                        icon,
-                        size: iconSize ?? 18,
-                        color: buttonColor ?? Colors.white,
-                      )
-                    : const SizedBox(),
-                icon != null && reightIcon == false
-                    ? horizontalSpace(5)
-                    : horizontalSpace(0),
-                Text(buttonName,
-                    style: AppTextStyles.style16Bw.copyWith(
-                      color: buttonColor ?? Colors.white,
-                      fontSize: fontSize ?? 16,
-                    )),
-                icon != null && reightIcon == true
-                    ? horizontalSpace(5)
-                    : horizontalSpace(0),
-                icon != null && reightIcon == true
-                    ? Icon(
-                        icon,
-                        size: iconSize ?? 18,
-                        color: buttonColor ?? Colors.white,
-                      )
-                    : const SizedBox(),
-              ],
+          : Text(
+              buttonName,
+              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                    color: buttonColor ?? Colors.white,
+                    fontSize: fontSize ?? 16.sp,
+                  ),
             ),
     );
   }

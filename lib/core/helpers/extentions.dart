@@ -1,3 +1,4 @@
+import 'package:academe_mobile_new/core/themes/colors.dart';
 import 'package:flutter/material.dart';
 
 extension Navigation on BuildContext {
@@ -19,5 +20,11 @@ extension Navigation on BuildContext {
 
   void pop() {
     Navigator.of(this).pop();
+  }
+}
+
+extension ThemeColorExtension on TextStyle {
+  TextStyle withThemeColor(bool isDark) {
+    return copyWith(color: isDark ? Colors.white : AppColors.appBlack);
   }
 }

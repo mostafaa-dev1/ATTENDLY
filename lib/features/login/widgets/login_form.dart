@@ -1,11 +1,9 @@
 import 'package:academe_mobile_new/core/helpers/regex.dart';
 import 'package:academe_mobile_new/core/helpers/spacing.dart';
-import 'package:academe_mobile_new/core/themes/colors.dart';
 import 'package:academe_mobile_new/core/widgets/app_text_form.dart';
 import 'package:academe_mobile_new/features/login/logic/login_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LoginFrom extends StatefulWidget {
   const LoginFrom({super.key});
@@ -40,72 +38,56 @@ class _LoginFromState extends State<LoginFrom> {
       child: Column(
         children: [
           CustomTextFrom(
-            prefixText: haveId ? '@' : 'C',
-            hintText: haveId ? 'Username' : 'ID',
-            controller: cubit.idController,
-            keyboardType: haveId ? TextInputType.text : TextInputType.number,
+            hintText: 'Email',
+            controller: cubit.emailController,
+            keyboardType: TextInputType.emailAddress,
             validator: (value) {
-              if (haveId) {
-                if (value == null ||
-                    value.isEmpty ||
-                    !AppRegex.isValidUsername(cubit.idController.text) ||
-                    value.length < 8) {
-                  return 'Username includes only (a-z, A-Z, 0-9, _, -), at least 8 characters and no spaces';
-                }
-              } else {
-                if (value == null ||
-                    value.isEmpty ||
-                    value.length != 7 ||
-                    !AppRegex.isValidId(cubit.idController.text)) {
-                  return 'Please enter valid ID';
-                }
+              if (value == null || value.isEmpty) {
+                return 'Please enter your email';
+              } else if (!AppRegex.isEmailValid(value)) {
+                return 'Please enter a valid email';
               }
               return null;
             },
           ),
-          verticalSpace(20),
-          GestureDetector(
-            onTap: () {
-              setState(() {
-                haveId = !haveId;
-              });
+          verticalSpace(10),
+          CustomTextFrom(
+            keyboardType: TextInputType.visiblePassword,
+            hintText: 'Password',
+            controller: cubit.passwordController,
+            obscureText: isObscure,
+            suffixIcon: IconButton(
+              icon: Icon(
+                isObscure ? Icons.visibility : Icons.visibility_off,
+              ),
+              onPressed: () {
+                setState(() {
+                  isObscure = !isObscure;
+                });
+              },
+            ),
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please enter your password';
+              } else if (value.length < 6) {
+                return 'Password must be at least 6 characters';
+              }
+              return null;
             },
-            child: Row(
-              children: [
-                Container(
-                  width: 20,
-                  height: 20,
-                  decoration: BoxDecoration(
-                    color: haveId ? AppColors.mainColor : Colors.grey[300],
-                    borderRadius: BorderRadius.circular(5),
-                  ),
-                  child: Icon(
-                    Icons.check,
-                    color: haveId ? Colors.white : Colors.grey,
-                    size: 20,
-                  ),
+          ),
+          verticalSpace(10),
+          Align(
+            alignment: Alignment.centerRight,
+            child: TextButton(
+              onPressed: () {
+                // Navigate to forgot password screen
+              },
+              child:  Text('Forgot Password?',
+                style: TextStyle(
+                  color: Colors.blue,
+                  fontSize: 16,
                 ),
-                horizontalSpace(10),
-                Expanded(
-                  child: Text.rich(TextSpan(
-                      text: 'I don\'t have ID yet. ',
-                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                            fontSize: 12.sp,
-                          ),
-                      children: [
-                        TextSpan(
-                            text:
-                                'If you don\'t have ID, type your username above.',
-                            style: Theme.of(context)
-                                .textTheme
-                                .bodyMedium!
-                                .copyWith(
-                                  fontSize: 12.sp,
-                                  decoration: TextDecoration.underline,
-                                )),
-                      ])),
-                ),
-              ],
+              ),
             ),
           ),
         ],

@@ -2,7 +2,7 @@ import 'package:academe_mobile_new/core/helpers/extentions.dart';
 import 'package:academe_mobile_new/core/helpers/spacing.dart';
 import 'package:academe_mobile_new/core/networking/local_database/shared_preferances.dart';
 import 'package:academe_mobile_new/core/routing/app_routes.dart';
-import 'package:academe_mobile_new/core/themes/text_styles.dart';
+import 'package:academe_mobile_new/core/themes/colors.dart';
 import 'package:academe_mobile_new/core/widgets/custom_button.dart';
 import 'package:academe_mobile_new/core/widgets/have_not_have_account.dart';
 import 'package:academe_mobile_new/core/widgets/sacffold_messinger.dart';
@@ -49,7 +49,9 @@ class Register extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Hello, Welcome 👋', style: AppTextStyles.style20Bc),
+                  Text('Hello, Welcome 👋',
+                      style: theme.textTheme.titleLarge!
+                          .copyWith(color: AppColors.mainColor)),
                   Text('First, let\'s create your account',
                       style: theme.textTheme.headlineSmall),
                   verticalSpace(30),

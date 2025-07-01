@@ -18,11 +18,12 @@ if (keystorePropertiesFile.exists()) {
 android {
     namespace "com.attendly.attendance_app"
     compileSdk 35
-    ndkVersion flutter.ndkVersion
+    ndkVersion "29.0.13599879"
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+        coreLibraryDesugaringEnabled true
     }
 
     kotlinOptions {
@@ -58,4 +59,9 @@ android {
 
 flutter {
     source = "../.."
+}
+dependencies {
+    // Add the Google Play services dependencies for Firebase
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.1.4'
+
 }

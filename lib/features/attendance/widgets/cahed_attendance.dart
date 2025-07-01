@@ -3,7 +3,6 @@ import 'package:academe_mobile_new/core/helpers/images_helpers.dart';
 import 'package:academe_mobile_new/core/helpers/spacing.dart';
 import 'package:academe_mobile_new/core/logic/app_cubit.dart';
 import 'package:academe_mobile_new/core/routing/app_routes.dart';
-import 'package:academe_mobile_new/core/themes/text_styles.dart';
 import 'package:academe_mobile_new/core/widgets/nodata.dart';
 import 'package:academe_mobile_new/core/widgets/sacffold_messinger.dart';
 import 'package:academe_mobile_new/features/attendance/model/student_model.dart';
@@ -120,7 +119,7 @@ class CahedAttendance extends StatelessWidget {
                   model.name!,
                   style: theme.textTheme.headlineMedium),
               subtitle: Text(model.id.toString(),
-                  style: AppTextStyles.style13w400g700.copyWith(
+                  style: theme.textTheme.headlineSmall!.copyWith(
                       fontWeight: FontWeight.w600, color: Colors.grey[500])),
             )),
       ),

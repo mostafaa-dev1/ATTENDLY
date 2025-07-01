@@ -1,7 +1,6 @@
 import 'package:academe_mobile_new/core/helpers/extentions.dart';
 import 'package:academe_mobile_new/core/routing/app_routes.dart';
 import 'package:academe_mobile_new/core/themes/colors.dart';
-import 'package:academe_mobile_new/core/themes/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:skeletonizer/skeletonizer.dart';
@@ -52,7 +51,7 @@ class ItemLoading extends StatelessWidget {
                   'Name',
                   style: theme.textTheme.headlineMedium),
               subtitle: Text('2100000',
-                  style: AppTextStyles.style13w400g700.copyWith(
+                  style: theme.textTheme.headlineSmall!.copyWith(
                       fontWeight: FontWeight.w600, color: Colors.grey[500])),
               trailing: Container(
                   padding:
@@ -62,7 +61,7 @@ class ItemLoading extends StatelessWidget {
                     borderRadius: BorderRadius.all(Radius.circular(50)),
                   ),
                   child: Text('5',
-                      style: AppTextStyles.style13Bb
+                      style: theme.textTheme.headlineSmall!
                           .copyWith(color: Colors.white))),
             )),
       ),
